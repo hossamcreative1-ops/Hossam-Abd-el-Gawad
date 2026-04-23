@@ -402,6 +402,8 @@
   <div class="topbar-logo">HAG · لوحة التحكم</div>
   <div class="topbar-actions">
     <button class="btn" onclick="window.open('index.html','_blank')">👁 معاينة الموقع</button>
+    <button class="btn" onclick="saveState()" style="border-color:#C9A96E; color:#C9A96E;">💾 حفظ</button>
+    <button class="btn btn-danger" onclick="resetState()">↺ إعادة تعيين</button>
     <button class="btn btn-primary" onclick="exportConfig()">⬇ تحميل config.js</button>
   </div>
 </div>
@@ -812,9 +814,9 @@
 
 <script>
 // ═══════════════════════════════════════════════
-//  STATE
+//  STATE — مع localStorage للحفظ التلقائي
 // ═══════════════════════════════════════════════
-const state = {
+const DEFAULT_STATE = {
   identity: {
     name: "Hossam Abdel-Gawad",
     tagline: "Graphic Design · Cinematic Editing · Marketing",
@@ -853,6 +855,73 @@ const state = {
     { icon:"◈", title:"Marketing Strategy", desc:"High-impact campaigns crafted with data-driven insight and creative boldness." },
   ],
 };
+
+// تحميل الـ state من localStorage أو استخدام الافتراضي
+function loadState() {
+  try {
+    const saved = localStorage.getItem('hag_admin_state');
+    if (saved) return JSON.parse(saved);
+  } catch(e) {}
+  return JSON.parse(JSON.stringify(DEFAULT_STATE));
+}
+
+// حفظ الـ state في localStorage
+function saveState() {
+  collectState();
+  try {
+    localStorage.setItem('hag_admin_state', JSON.stringify(state));
+    showToast('✓ تم الحفظ تلقائياً');
+  } catch(e) {
+    showToast('⚠ فشل الحفظ التلقائي');
+  }
+}
+
+// إعادة تعيين كل البيانات
+function resetState() {
+  if (!confirm('هل تريد مسح كل البيانات والرجوع للافتراضي؟')) return;
+  localStorage.removeItem('hag_admin_state');
+  location.reload();
+}
+
+const state = loadState();
+
+// ملء الحقول من الـ state المحفوظ
+function fillFormFromState() {
+  const { identity, social, theme } = state;
+  // Identity
+  const set = (id, val) => { const el = document.getElementById(id); if(el) el.value = val || ''; };
+  set('f-name', identity.name);
+  set('f-location', identity.location);
+  set('f-tagline', identity.tagline);
+  set('f-subtag', identity.subtag);
+  set('f-bio', identity.bio);
+  set('f-email', identity.email);
+  set('f-stat1', identity.stat1);
+  set('f-stat2', identity.stat2);
+  set('f-stat3', identity.stat3);
+  // Social
+  set('f-behance', social.behance);
+  set('f-linkedin', social.linkedin);
+  set('f-instagram', social.instagram);
+  set('f-youtube', social.youtube);
+  set('f-vimeo', social.vimeo);
+  set('f-social-email', social.email);
+  // Preview
+  if(document.getElementById('previewName')) document.getElementById('previewName').textContent = identity.name;
+  if(document.getElementById('previewTag')) document.getElementById('previewTag').textContent = identity.tagline;
+  // Colors
+  const colorKeys = ['accent','accentLight','bg','bgCard','surface','border','textPrimary','textSecondary'];
+  colorKeys.forEach(key => {
+    const hex = theme[key];
+    if (!hex) return;
+    const sw = document.getElementById('sw-' + key);
+    const cp = document.getElementById('cp-' + key);
+    const ch = document.getElementById('ch-' + key);
+    if(sw) sw.style.background = hex;
+    if(cp) cp.value = hex;
+    if(ch) ch.value = hex;
+  });
+}
 
 // ═══════════════════════════════════════════════
 //  NAVIGATION
@@ -1175,12 +1244,18 @@ function showToast(msg) {
 }
 
 // ═══════════════════════════════════════════════
-//  INIT
+//  INIT — تحميل البيانات المحفوظة عند الفتح
 // ═══════════════════════════════════════════════
+fillFormFromState();
 renderVideos();
 renderDesigns();
 renderCerts();
 renderServices();
+
+// حفظ تلقائي عند تغيير أي حقل
+document.querySelectorAll('input, textarea, select').forEach(el => {
+  el.addEventListener('change', () => saveState());
+});
 </script>
 </body>
 </html>
