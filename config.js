@@ -54,13 +54,6 @@ const CONFIG = {
 
   designs: [
     {
-        "src": "https://res.cloudinary.com/dlv72mxl5/image/upload/v1776969443/IMG_%D9%A2%D9%A0%D9%A2%D9%A5%D9%A0%D9%A9%D9%A2%D9%A1_%D9%A1%D9%A7%D9%A1%D9%A1%D9%A4%D9%A3_kwofim.png",
-        "title": "اهلا بك في موقعي انا حسام عبد الجواد",
-        "category": "Graphic Design",
-        "tags": [],
-        "featured": true
-    },
-    {
         "src": "https://res.cloudinary.com/dlv72mxl5/image/upload/v1776959339/474092009_122208513122210045_7246867498698929885_n_hs5fnl.jpg",
         "title": "تصميم عيادة اسنان|Dental clinic design",
         "category": "Graphic Design",
@@ -70,6 +63,27 @@ const CONFIG = {
     {
         "src": "https://res.cloudinary.com/dlv72mxl5/image/upload/v1776959340/hossam-abdel_gawx-_lzgabt.jpg",
         "title": "بوستر",
+        "category": "Graphic Design",
+        "tags": [],
+        "featured": false
+    },
+    {
+        "src": "https://res.cloudinary.com/dlv72mxl5/image/upload/v1776988044/%D8%A7%D9%84%D9%8A%D9%88%D9%85_%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8AArtboard_1_c8tno2.jpg",
+        "title": "اليوم الوطني السعودي ال95 |Saudi National Day 95",
+        "category": "Graphic Design",
+        "tags": [],
+        "featured": false
+    },
+    {
+        "src": "https://res.cloudinary.com/dlv72mxl5/image/upload/v1776988039/%D8%A7%D9%84%D9%8A%D9%88%D9%85_%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8AArtboard_2_uolmxt.jpg",
+        "title": "اليوم الوطني السعودي ال95 |Saudi National Day 95",
+        "category": "Graphic Design",
+        "tags": [],
+        "featured": false
+    },
+    {
+        "src": "https://res.cloudinary.com/dlv72mxl5/image/upload/v1776988054/%D8%A7%D9%84%D9%8A%D9%88%D9%85-%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A_tmntxr.gif",
+        "title": "اليوم الوطني السعودي ال95 |Saudi National Day 95",
         "category": "Graphic Design",
         "tags": [],
         "featured": false
