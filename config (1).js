@@ -14,7 +14,7 @@ const CONFIG = {
     tagline: "Graphic Design · Cinematic Editing · Marketing",
     subtag: "Luxury Content Powered by AI",
     bio: "I craft high-end visual experiences that blur the line between art and strategy — blending cinematic storytelling, bold graphic design, and AI-driven creativity to build brands that command attention.",
-    email: "hossam@example.com",
+    email: "hossam.creative1@gmail.com",
     location: "Egypt",
   },
 
@@ -35,89 +35,15 @@ const CONFIG = {
   social: {
     behance:   "https://www.behance.net/ef55c0e3",
     linkedin:  "",
-    instagram: "3bgwed",
-    youtube:   "",
+    instagram: "https://www.instagram.com/3bgwed/?hl=ar",
+    youtube:   "https://www.youtube.com/@3bgwed2003",
     vimeo:     "",
-    email:     "hossam@example.com",
+    email:     "hossam.creative1@gmail.com",
   },
 
-  videos: [
-    {
-        "id": "dQw4w9WgXcQ",
-        "platform": "youtube",
-        "title": "Brand Film — Luxury Fashion",
-        "category": "Cinematic Editing",
-        "tags": [
-            "Luxury",
-            "Fashion",
-            "AI"
-        ],
-        "featured": true
-    },
-    {
-        "id": "dQw4w9WgXcQ",
-        "platform": "youtube",
-        "title": "Product Launch — High-End Watch",
-        "category": "Cinematic Editing",
-        "tags": [
-            "Product",
-            "Luxury"
-        ],
-        "featured": false
-    },
-    {
-        "id": "dQw4w9WgXcQ",
-        "platform": "youtube",
-        "title": "Social Media Reel — Beauty Brand",
-        "category": "Marketing",
-        "tags": [
-            "Social",
-            "Beauty"
-        ],
-        "featured": false
-    }
-],
+  videos: [],
 
-  designs: [
-    {
-        "src": "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?w=400",
-        "title": "Brand Identity — Noir Parfum",
-        "category": "Graphic Design",
-        "tags": [
-            "Branding",
-            "Luxury",
-            "AI"
-        ],
-        "featured": true
-    },
-    {
-        "src": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400",
-        "title": "Editorial Layout — Fashion Magazine",
-        "category": "Graphic Design",
-        "tags": [
-            "Editorial",
-            "Print"
-        ],
-        "featured": false
-    },
-    {
-        "src": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400",
-        "title": "Campaign — AI Generated Visuals",
-        "category": "AI + Design",
-        "tags": [
-            "AI",
-            "Campaign"
-        ],
-        "featured": true
-    },
-    {
-        "src": "<a href=\"https://ibb.co/pjNr27qw\"><img src=\"https://i.ibb.co/9HB3nDPg/22.jpg\" alt=\"22\" border=\"0\"></a>",
-        "title": "Social Media Design",
-        "category": "Graphic Design",
-        "tags": [],
-        "featured": true
-    }
-],
+  designs: [],
 
   certificates: [
     {
@@ -176,7 +102,7 @@ const CONFIG = {
 
   stats: {
     projects: "50+",
-    experience: "5+",
+    experience: "3+",
     clients: "30+",
   },
 
