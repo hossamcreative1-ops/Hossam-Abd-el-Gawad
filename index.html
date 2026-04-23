@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hossam Abdel-Gawad — Creative Portfolio</title>
+  <meta name="description" content="Multi-disciplinary creative specializing in Graphic Design, Cinematic Editing & AI-Powered Marketing." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+  <!-- Config MUST load before app.js -->
+  <script src="config.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════ CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- ══════════════════════════════════════════════ NOISE OVERLAY -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- ══════════════════════════════════════════════ NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="logo-text">H·A·G</span>
+        <span class="logo-dot"></span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#work" class="nav-link" data-text="Work">Work</a></li>
+        <li><a href="#services" class="nav-link" data-text="Services">Services</a></li>
+        <li><a href="#certificates" class="nav-link" data-text="Credentials">Credentials</a></li>
+        <li><a href="#contact" class="nav-link cta-nav" data-text="Hire Me">Hire Me</a></li>
+      </ul>
+
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════════════ HERO -->
+  <section class="hero" id="hero">
+    <canvas class="hero-canvas" id="heroCanvas"></canvas>
+
+    <div class="hero-content">
+      <div class="hero-badge reveal-up" style="--delay:0s">
+        <span class="badge-dot"></span>
+        <span>Available for projects</span>
+      </div>
+
+      <h1 class="hero-name reveal-up" style="--delay:0.1s" id="heroName">
+        <!-- Injected by JS -->
+      </h1>
+
+      <p class="hero-title reveal-up" style="--delay:0.25s" id="heroTitle">
+        <!-- Injected by JS -->
+      </p>
+
+      <p class="hero-bio reveal-up" style="--delay:0.4s" id="heroBio">
+        <!-- Injected by JS -->
+      </p>
+
+      <div class="hero-actions reveal-up" style="--delay:0.55s">
+        <a href="#work" class="btn btn-primary">
+          <span>View Work</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+      </div>
+
+      <div class="hero-stats reveal-up" style="--delay:0.7s">
+        <div class="stat"><span class="stat-num">50+</span><span class="stat-label">Projects</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">5+</span><span class="stat-label">Years Exp.</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">30+</span><span class="stat-label">Clients</span></div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+
+    <div class="hero-tags">
+      <span>Graphic Design</span>
+      <span>Cinematic</span>
+      <span>AI Content</span>
+      <span>Marketing</span>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════ MARQUEE -->
+  <div class="marquee-wrap" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Luxury Design</span><span class="mx">✦</span>
+      <span>Cinematic Vision</span><span class="mx">✦</span>
+      <span>AI-Powered</span><span class="mx">✦</span>
+      <span>High-End Branding</span><span class="mx">✦</span>
+      <span>Motion Graphics</span><span class="mx">✦</span>
+      <span>Visual Storytelling</span><span class="mx">✦</span>
+      <span>Luxury Design</span><span class="mx">✦</span>
+      <span>Cinematic Vision</span><span class="mx">✦</span>
+      <span>AI-Powered</span><span class="mx">✦</span>
+      <span>High-End Branding</span><span class="mx">✦</span>
+      <span>Motion Graphics</span><span class="mx">✦</span>
+      <span>Visual Storytelling</span><span class="mx">✦</span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════ SERVICES -->
+  <section class="section services-section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">What I Do</p>
+        <h2 class="section-title">Services</h2>
+      </div>
+      <div class="services-grid" id="servicesGrid">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════ WORK -->
+  <section class="section work-section" id="work">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Selected Work</p>
+        <h2 class="section-title">Portfolio</h2>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="filter-tabs" id="filterTabs">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="video">Video</button>
+        <button class="filter-btn" data-filter="design">Design</button>
+      </div>
+
+      <!-- Video Grid -->
+      <div class="work-group" id="videoGroup">
+        <p class="work-group-label">Cinematic & Video</p>
+        <div class="video-grid" id="videoGrid">
+          <!-- Injected by JS -->
+        </div>
+      </div>
+
+      <!-- Design Grid -->
+      <div class="work-group" id="designGroup">
+        <p class="work-group-label">Graphic Design & AI</p>
+        <div class="design-grid" id="designGrid">
+          <!-- Injected by JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════ CERTIFICATES -->
+  <section class="section certs-section" id="certificates">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Verified Skills</p>
+        <h2 class="section-title">Credentials</h2>
+      </div>
+      <div class="certs-grid" id="certsGrid">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════ CONTACT -->
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <div class="contact-inner">
+        <div class="contact-left">
+          <p class="section-eyebrow">Let's Work Together</p>
+          <h2 class="contact-heading">Start a<br/><em>Project</em></h2>
+          <p class="contact-sub" id="contactSub"><!-- Injected --></p>
+          <div class="contact-socials" id="contactSocials"><!-- Injected --></div>
+        </div>
+        <div class="contact-right">
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <input type="text" placeholder="Your Name" required autocomplete="off" />
+              <label>Name</label>
+            </div>
+            <div class="form-group">
+              <input type="email" placeholder="Your Email" required autocomplete="off" />
+              <label>Email</label>
+            </div>
+            <div class="form-group">
+              <select>
+                <option value="">Select Service</option>
+                <option>Graphic Design</option>
+                <option>Cinematic Editing</option>
+                <option>AI Content Creation</option>
+                <option>Marketing Strategy</option>
+                <option>Full Package</option>
+              </select>
+              <label>Service</label>
+            </div>
+            <div class="form-group">
+              <textarea placeholder="Tell me about your project..." rows="4" required></textarea>
+              <label>Message</label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              <span>Send Message</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════ FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="footer-name" id="footerName"><!-- Injected --></p>
+      <p class="footer-copy">© <span id="year"></span> — All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════════════ VIDEO MODAL -->
+  <div class="modal-overlay" id="videoModal">
+    <button class="modal-close" id="modalClose">✕</button>
+    <div class="modal-content" id="modalContent"></div>
+  </div>
+
+</body>
+</html>
