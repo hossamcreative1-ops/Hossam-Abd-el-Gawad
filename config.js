@@ -35,7 +35,7 @@ const CONFIG = {
   social: {
     behance:   "https://www.behance.net/ef55c0e3",
     linkedin:  "",
-    instagram: "https://www.instagram.com/3bgwed/?hl=ar",
+    instagram: "3bgwed",
     youtube:   "",
     vimeo:     "",
     email:     "hossam@example.com",
@@ -111,10 +111,26 @@ const CONFIG = {
         "featured": true
     },
     {
-        "src": "https://www.behance.net/gallery/236920717/Social-Media-Design-Al-Rayyan-Perfume",
-        "title": "Social Media Design | Al Rayyan Perfume",
+        "src": "<a href=\"https://ibb.co/pjNr27qw\"><img src=\"https://i.ibb.co/9HB3nDPg/22.jpg\" alt=\"22\" border=\"0\"></a>",
+        "title": "Social Media Design",
         "category": "Graphic Design",
         "tags": [],
+        "featured": true
+    },
+    {
+        "src": "<a href=\"https://ibb.co/pvyDM5gZ\"><img src=\"https://i.ibb.co/fYvRyLbt/474092009-122208513122210045-7246867498698929885-n.jpg\" alt=\"474092009-122208513122210045-7246867498698929885-n\" border=\"0\" /></a>",
+        "title": "تصميم عيادة اسنان|Dental clinic design",
+        "category": "Graphic Design",
+        "tags": [],
+        "featured": false
+    },
+    {
+        "src": "<a href=\"https://ibb.co/C3ZsL1J3\"><img src=\"https://i.ibb.co/TxSqyvKx/brfyon.jpg\" alt=\"brfyon\" border=\"0\" /></a>",
+        "title": "Design for perfume |تصميم لبرفان",
+        "category": "Graphic Design",
+        "tags": [
+            "branding"
+        ],
         "featured": false
     }
 ],
