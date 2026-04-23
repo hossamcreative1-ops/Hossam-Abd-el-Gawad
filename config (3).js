@@ -77,46 +77,6 @@ const CONFIG = {
 
   designs: [
     {
-        "src": "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?w=400",
-        "title": "Brand Identity — Noir Parfum",
-        "category": "Graphic Design",
-        "tags": [
-            "Branding",
-            "Luxury",
-            "AI"
-        ],
-        "featured": true
-    },
-    {
-        "src": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400",
-        "title": "Editorial Layout — Fashion Magazine",
-        "category": "Graphic Design",
-        "tags": [
-            "Editorial",
-            "Print"
-        ],
-        "featured": false
-    },
-    {
-        "src": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400",
-        "title": "Campaign — AI Generated Visuals",
-        "category": "AI + Design",
-        "tags": [
-            "AI",
-            "Campaign"
-        ],
-        "featured": true
-    },
-    {
-        "src": "https://res.cloudinary.com/dlv72mxl5/image/upload/v1776959012/brfyon_jb7jtg.jpg",
-        "title": "Design for perfume |تصميم لبرفان",
-        "category": "Graphic Design",
-        "tags": [
-            "branding"
-        ],
-        "featured": false
-    },
-    {
         "src": "https://res.cloudinary.com/dlv72mxl5/image/upload/v1776959339/474092009_122208513122210045_7246867498698929885_n_hs5fnl.jpg",
         "title": "تصميم عيادة اسنان|Dental clinic design",
         "category": "Graphic Design",
