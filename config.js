@@ -14,7 +14,7 @@ const CONFIG = {
     tagline: "Graphic Design · Cinematic Editing · Marketing",
     subtag: "Luxury Content Powered by AI",
     bio: "I craft high-end visual experiences that blur the line between art and strategy — blending cinematic storytelling, bold graphic design, and AI-driven creativity to build brands that command attention.",
-    email: "hossam@example.com",
+    email: "hossam.creative1@gmail.com",
     location: "Egypt",
   },
 
@@ -35,10 +35,10 @@ const CONFIG = {
   social: {
     behance:   "https://www.behance.net/ef55c0e3",
     linkedin:  "",
-    instagram: "3bgwed",
-    youtube:   "",
+    instagram: "https://www.instagram.com/3bgwed/?hl=ar",
+    youtube:   "https://www.youtube.com/@3bgwed2003",
     vimeo:     "",
-    email:     "hossam@example.com",
+    email:     "hossam.creative1@gmail.com",
   },
 
   videos: [
@@ -66,14 +66,11 @@ const CONFIG = {
         "featured": false
     },
     {
-        "id": "dQw4w9WgXcQ",
+        "id": "Ye7b_9H83wA",
         "platform": "youtube",
-        "title": "Social Media Reel — Beauty Brand",
-        "category": "Marketing",
-        "tags": [
-            "Social",
-            "Beauty"
-        ],
+        "title": "\"أول فيديو لي على البرمير - هل يستحق المشاهدة؟ 🎬🔥\"",
+        "category": "Video",
+        "tags": [],
         "featured": false
     }
 ],
@@ -111,14 +108,16 @@ const CONFIG = {
         "featured": true
     },
     {
-        "src": "<a href=\"https://ibb.co/pjNr27qw\"><img src=\"https://i.ibb.co/9HB3nDPg/22.jpg\" alt=\"22\" border=\"0\"></a>",
-        "title": "Social Media Design",
+        "src": "https://res.cloudinary.com/dlv72mxl5/image/upload/v1776959012/brfyon_jb7jtg.jpg",
+        "title": "Design for perfume |تصميم لبرفان",
         "category": "Graphic Design",
-        "tags": [],
-        "featured": true
+        "tags": [
+            "branding"
+        ],
+        "featured": false
     },
     {
-        "src": "https://ibb.co/pvyDM5gZ",
+        "src": "https://res.cloudinary.com/dlv72mxl5/image/upload/v1776959339/474092009_122208513122210045_7246867498698929885_n_hs5fnl.jpg",
         "title": "تصميم عيادة اسنان|Dental clinic design",
         "category": "Graphic Design",
         "tags": [
@@ -127,11 +126,27 @@ const CONFIG = {
         "featured": false
     },
     {
-        "src": "https://res.cloudinary.com/dlv72mxl5/image/upload/v1776959012/brfyon_jb7jtg.jpg",
-        "title": "Design for perfume |تصميم لبرفان",
+        "src": "https://res.cloudinary.com/dlv72mxl5/image/upload/v1776959340/hossam-abdel_gawx-_lzgabt.jpg",
+        "title": "بوستر",
         "category": "Graphic Design",
         "tags": [
             "branding"
+        ],
+        "featured": false
+    },
+    {
+        "src": "https://res.cloudinary.com/dlv72mxl5/image/upload/v1776959340/475303152_122209845578210045_973260636189781226_n_hqmrgw.jpg",
+        "title": "Study start design",
+        "category": "Graphic Design",
+        "tags": [],
+        "featured": false
+    },
+    {
+        "src": "https://res.cloudinary.com/dlv72mxl5/image/upload/v1776959572/%D8%A8%D8%B1%D9%81%D8%A7%D9%86_vi1ffk.png",
+        "title": "Social Media Design | Al Rayyan Perfume",
+        "category": "Graphic Design",
+        "tags": [
+            "luxury"
         ],
         "featured": false
     }
@@ -194,7 +209,7 @@ const CONFIG = {
 
   stats: {
     projects: "50+",
-    experience: "5+",
+    experience: "3+",
     clients: "30+",
   },
 
