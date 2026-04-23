@@ -221,3 +221,60 @@ const CONFIG = {
   root.style.setProperty("--text-secondary",t.textSecondary);
   root.style.setProperty("--text-muted",    t.textMuted);
 })();
+const SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSlN1wx-YpHubdD6-8dVUaV3FvszEyo1DJxFm9OLJqVIXSCZ9E1sFutmNVS2oOgNgBlVa4Tdu6yyhax/pub?gid=0&single=true&output=csv";
+
+async function loadFromSheets() {
+  try {
+    const res = await fetch(SHEET_URL);
+    const csv = await res.text();
+    const rows = csv.split('\n').slice(1).map(r => r.split(','));
+    
+    CONFIG.videos = rows
+      .filter(r => r[0] === 'video')
+      .map(r => ({
+        id: r[1].trim(),
+        platform: 'youtube',
+        title: r[2].trim(),
+        category: r[3].trim(),
+        tags: r[4].split('|').map(t => t.trim()),
+        featured: r[5].trim() === 'true',
+      }));
+
+    CONFIG.designs = rows
+      .filter(r => r[0] === 'design')
+      .map(r => ({
+        src: r[1].trim(),
+        title: r[2].trim(),
+        category: r[3].trim(),
+        tags: r[4].split('|').map(t => t.trim()),
+        featured: r[5].trim() === 'true',
+      }));
+
+    console.log('✓ Content loaded from Google Sheets');
+  } catch (e) {
+    console.warn('Could not load from Sheets, using local config:', e);
+  }
+}
+
+// Uncomment this line when your Sheet URL is ready:
+ loadFromSheets();
+```
+
+---
+
+## 🎨 أفكار لتغيير الثيم
+
+| الثيم | accent | bg |
+|-------|--------|-----|
+| الذهبي (الحالي) | `#C9A96E` | `#080808` |
+| أزرق كهربائي | `#00F5FF` | `#050510` |
+| أخضر نيون | `#00FF87` | `#050A07` |
+| بنفسجي فاخر | `#B57BFF` | `#06040E` |
+| أحمر دموي | `#FF3D3D` | `#080404` |
+
+---
+
+## 📬 للتواصل
+
+هذا الموقع مبني خصيصاً لـ **Hossam Abdel-Gawad** — كل الحقوق محفوظة.
+
