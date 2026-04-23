@@ -118,8 +118,8 @@ const CONFIG = {
         "featured": true
     },
     {
-        "src": "https://ibb.co/C3ZsL1J3",
-        "title": "Design for perfume |تصميم لبرفان",
+        "src": "https://ibb.co/pvyDM5gZ",
+        "title": "تصميم عيادة اسنان|Dental clinic design",
         "category": "Graphic Design",
         "tags": [
             "branding"
@@ -127,8 +127,8 @@ const CONFIG = {
         "featured": false
     },
     {
-        "src": "https://ibb.co/pvyDM5gZ",
-        "title": "تصميم عيادة اسنان|Dental clinic design",
+        "src": "https://res.cloudinary.com/dlv72mxl5/image/upload/v1776959012/brfyon_jb7jtg.jpg",
+        "title": "Design for perfume |تصميم لبرفان",
         "category": "Graphic Design",
         "tags": [
             "branding"
