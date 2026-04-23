@@ -41,9 +41,58 @@ const CONFIG = {
     email:     "hossam.creative1@gmail.com",
   },
 
-  videos: [],
+  videos: [
+    {
+        "id": "Ye7b_9H83wA",
+        "platform": "youtube",
+        "title": "\"أول فيديو لي على البرمير - هل يستحق المشاهدة؟ 🎬🔥\"",
+        "category": "Video",
+        "tags": [],
+        "featured": true
+    }
+],
 
-  designs: [],
+  designs: [
+    {
+        "src": "https://res.cloudinary.com/dlv72mxl5/image/upload/v1776969443/IMG_%D9%A2%D9%A0%D9%A2%D9%A5%D9%A0%D9%A9%D9%A2%D9%A1_%D9%A1%D9%A7%D9%A1%D9%A1%D9%A4%D9%A3_kwofim.png",
+        "title": "اهلا بك في موقعي انا حسام عبد الجواد",
+        "category": "Graphic Design",
+        "tags": [],
+        "featured": true
+    },
+    {
+        "src": "https://res.cloudinary.com/dlv72mxl5/image/upload/v1776959572/%D8%A8%D8%B1%D9%81%D8%A7%D9%86_vi1ffk.png",
+        "title": "Social Media Design | Al Rayyan Perfume",
+        "category": "Graphic Design",
+        "tags": [
+            "luxury"
+        ],
+        "featured": false
+    },
+    {
+        "src": "https://res.cloudinary.com/dlv72mxl5/image/upload/v1776959012/brfyon_jb7jtg.jpg",
+        "title": "Social Media Design |  Perfume",
+        "category": "Graphic Design",
+        "tags": [
+            "luxury"
+        ],
+        "featured": false
+    },
+    {
+        "src": "https://res.cloudinary.com/dlv72mxl5/image/upload/v1776959339/474092009_122208513122210045_7246867498698929885_n_hs5fnl.jpg",
+        "title": "تصميم عيادة اسنان|Dental clinic design",
+        "category": "Graphic Design",
+        "tags": [],
+        "featured": false
+    },
+    {
+        "src": "https://res.cloudinary.com/dlv72mxl5/image/upload/v1776959340/hossam-abdel_gawx-_lzgabt.jpg",
+        "title": "بوستر",
+        "category": "Graphic Design",
+        "tags": [],
+        "featured": false
+    }
+],
 
   certificates: [
     {
