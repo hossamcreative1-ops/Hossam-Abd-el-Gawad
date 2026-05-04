@@ -46,7 +46,7 @@ const CONFIG = {
         "id": "Ye7b_9H83wA",
         "platform": "youtube",
         "title": "\"أول فيديو لي على البرمير - هل يستحق المشاهدة؟ 🎬🔥\"",
-        "category": "Video",
+        "category": "Edit",
         "tags": [],
         "featured": true
     },
