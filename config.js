@@ -53,7 +53,7 @@ const CONFIG = {
     {
         "id": "1188893778",
         "platform": "vimeo",
-        "title": "اول فيديو لمحاولة الفاظ علي الملامح",
+        "title": "اول فيديو لمحاولة الحفاظ علي الملامح",
         "category": "AI",
         "tags": [],
         "featured": false
