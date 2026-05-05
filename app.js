@@ -403,24 +403,51 @@ document.addEventListener('DOMContentLoaded', () => {
   // ─────────────────────────────────────────────────────
   //  14. CONTACT FORM HANDLER
   // ─────────────────────────────────────────────────────
-  const form = document.getElementById('contactForm');
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const btn = form.querySelector('.btn-primary');
-      const originalHTML = btn.innerHTML;
-      btn.innerHTML = '<span>Message Sent ✓</span>';
-      btn.style.background = '#22C55E';
-      btn.style.color = '#000';
-      setTimeout(() => {
-        btn.innerHTML = originalHTML;
-        btn.style.background = '';
-        btn.style.color = '';
-        form.reset();
-      }, 3000);
-    });
-  }
+ const form = document.getElementById('contactForm');
+if (form) {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
+    const btn = form.querySelector('.btn-primary');
+    const originalHTML = btn.innerHTML;
+
+    btn.innerHTML = '<span>جاري الإرسال...</span>';
+    btn.disabled = true;
+
+    const formData = new FormData(form);
+    formData.append('access_key', 'd0432ab0-173f-4686-8cf4-4c43832c90d8');
+    formData.append('subject', 'رسالة جديدة من موقع HAG Portfolio');
+    formData.append('from_name', 'HAG Portfolio Contact');
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      });
+      const data = await res.json();
+
+      if (data.success) {
+        btn.innerHTML = '<span>تم الإرسال ✓</span>';
+        btn.style.background = '#22C55E';
+        btn.style.color = '#000';
+        form.reset();
+      } else {
+        throw new Error(data.message);
+      }
+    } catch (err) {
+      btn.innerHTML = '<span>فيه مشكلة، حاول تاني</span>';
+      btn.style.background = '#FF4444';
+      btn.style.color = '#fff';
+    }
+
+    setTimeout(() => {
+      btn.innerHTML = originalHTML;
+      btn.style.background = '';
+      btn.style.color = '';
+      btn.disabled = false;
+    }, 4000);
+  });
+}
   // ─────────────────────────────────────────────────────
   //  15. ACTIVE NAV LINK ON SCROLL
   // ─────────────────────────────────────────────────────
