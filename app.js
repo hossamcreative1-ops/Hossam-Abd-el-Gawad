@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const [first, ...rest] = identity.name.split(' ');
     heroName.innerHTML = `${first}<br/><em>${rest.join(' ')}</em>`;
   }
+
   const heroTitle = document.getElementById('heroTitle');
   if (heroTitle) heroTitle.textContent = identity.tagline + ' · ' + identity.subtag;
 
@@ -56,11 +57,14 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const socialsEl = document.getElementById('contactSocials');
+
   if (socialsEl) {
     Object.entries(social).forEach(([key, value]) => {
       if (!value) return;
+
       const info = socialMap[key];
       const href = key === 'email' ? `mailto:${value}` : value;
+
       socialsEl.innerHTML += `
         <a href="${href}" target="_blank" rel="noopener noreferrer" class="social-link">
           <span>${info.label}</span>
@@ -73,6 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
   //  03. SERVICES
   // ─────────────────────────────────────────────────────
   const servicesGrid = document.getElementById('servicesGrid');
+
   if (servicesGrid && CONFIG.display.showServices) {
     CONFIG.services.forEach((s, i) => {
       servicesGrid.innerHTML += `
@@ -89,8 +94,11 @@ document.addEventListener('DOMContentLoaded', () => {
   //  04. VIDEO GALLERY
   // ─────────────────────────────────────────────────────
   const videoGrid = document.getElementById('videoGrid');
+
   if (videoGrid && CONFIG.display.showVideoSection) {
+
     CONFIG.videos.forEach((v) => {
+
       const thumbUrl = v.platform === 'youtube'
         ? `https://img.youtube.com/vi/${v.id}/maxresdefault.jpg`
         : `https://vumbnail.com/${v.id}.jpg`;
@@ -126,8 +134,11 @@ document.addEventListener('DOMContentLoaded', () => {
   //  05. DESIGN GALLERY
   // ─────────────────────────────────────────────────────
   const designGrid = document.getElementById('designGrid');
+
   if (designGrid && CONFIG.display.showDesignSection) {
+
     CONFIG.designs.forEach((d) => {
+
       const featuredClass = d.featured ? 'featured' : '';
       const tagsHTML = d.tags.map(t => `<span class="tag-pill">${t}</span>`).join('');
 
@@ -147,23 +158,31 @@ document.addEventListener('DOMContentLoaded', () => {
   //  06. CERTIFICATES
   // ─────────────────────────────────────────────────────
   const certsGrid = document.getElementById('certsGrid');
+
   if (certsGrid && CONFIG.display.showCertificates) {
+
     CONFIG.certificates.forEach((c) => {
+
       const featuredClass = c.featured ? 'featured' : '';
+
       const badgeHTML = c.featured
-        ? `<span class="cert-badge">Featured</span>` : '';
+        ? `<span class="cert-badge">Featured</span>`
+        : '';
 
       certsGrid.innerHTML += `
         <div class="cert-card ${featuredClass} reveal-up" style="--delay:0.1s">
           <div class="cert-logo-wrap" style="background:${c.color}20; color:${c.color}; border: 1px solid ${c.color}40;">
             ${c.logo}
           </div>
+
           <div class="cert-info">
             ${badgeHTML}
             <p class="cert-issuer">${c.issuer}</p>
             <h3 class="cert-title">${c.title}</h3>
+
             <div class="cert-meta">
               <span class="cert-date">${c.date}</span>
+
               <a href="${c.credential}" target="_blank" rel="noopener" class="cert-link">
                 View Credential <span class="social-arrow">↗</span>
               </a>
@@ -192,10 +211,15 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = '';
   }
 
-  if (modalClose) modalClose.addEventListener('click', closeVideoModal);
-  if (modal) modal.addEventListener('click', (e) => {
-    if (e.target === modal) closeVideoModal();
-  });
+  if (modalClose) {
+    modalClose.addEventListener('click', closeVideoModal);
+  }
+
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeVideoModal();
+    });
+  }
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeVideoModal();
@@ -209,12 +233,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const designGroup = document.getElementById('designGroup');
 
   filterBtns.forEach(btn => {
+
     btn.addEventListener('click', () => {
+
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
+
       const f = btn.dataset.filter;
-      if (videoGroup) videoGroup.style.display = (f === 'design') ? 'none' : 'block';
-      if (designGroup) designGroup.style.display = (f === 'video') ? 'none' : 'block';
+
+      if (videoGroup) {
+        videoGroup.style.display = (f === 'design') ? 'none' : 'block';
+      }
+
+      if (designGroup) {
+        designGroup.style.display = (f === 'video') ? 'none' : 'block';
+      }
     });
   });
 
@@ -225,9 +258,13 @@ document.addEventListener('DOMContentLoaded', () => {
   let lastScroll = 0;
 
   window.addEventListener('scroll', () => {
+
     const currentScroll = window.scrollY;
+
     if (nav) {
+
       nav.classList.toggle('scrolled', currentScroll > 60);
+
       // Hide nav on scroll down, show on scroll up
       if (currentScroll > lastScroll && currentScroll > 200) {
         nav.style.transform = 'translateY(-100%)';
@@ -235,11 +272,16 @@ document.addEventListener('DOMContentLoaded', () => {
         nav.style.transform = 'translateY(0)';
       }
     }
+
     lastScroll = currentScroll <= 0 ? 0 : currentScroll;
+
   }, { passive: true });
 
   // Nav transitions
-  if (nav) nav.style.transition = 'background 0.4s, padding 0.4s, backdrop-filter 0.4s, transform 0.4s cubic-bezier(0.16,1,0.3,1)';
+  if (nav) {
+    nav.style.transition =
+      'background 0.4s, padding 0.4s, backdrop-filter 0.4s, transform 0.4s cubic-bezier(0.16,1,0.3,1)';
+  }
 
   // ─────────────────────────────────────────────────────
   //  10. HAMBURGER MENU
@@ -248,16 +290,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.getElementById('navLinks');
 
   if (hamburger && navLinks) {
+
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('open');
       navLinks.classList.toggle('open');
     });
 
     navLinks.querySelectorAll('a').forEach(link => {
+
       link.addEventListener('click', () => {
         hamburger.classList.remove('open');
         navLinks.classList.remove('open');
       });
+
     });
   }
 
@@ -265,82 +310,133 @@ document.addEventListener('DOMContentLoaded', () => {
   //  11. SCROLL REVEAL
   // ─────────────────────────────────────────────────────
   if (CONFIG.display.enableScrollAnimations) {
-    const revealEls = document.querySelectorAll('.reveal-up, .reveal-fade');
+
+    const revealEls =
+      document.querySelectorAll('.reveal-up, .reveal-fade');
 
     const observer = new IntersectionObserver((entries) => {
+
       entries.forEach(entry => {
+
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
           observer.unobserve(entry.target);
         }
+
       });
-    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+    }, {
+      threshold: 0.08,
+      rootMargin: '0px 0px -40px 0px'
+    });
 
     revealEls.forEach(el => observer.observe(el));
+
   } else {
+
     document.querySelectorAll('.reveal-up, .reveal-fade')
       .forEach(el => el.classList.add('visible'));
+
   }
 
   // ─────────────────────────────────────────────────────
   //  12. CUSTOM CURSOR
   // ─────────────────────────────────────────────────────
   if (CONFIG.display.enableCursor && window.innerWidth > 768) {
+
     const cursor = document.getElementById('cursor');
     const cursorDot = document.getElementById('cursorDot');
+
     let mouseX = 0, mouseY = 0;
     let cursorX = 0, cursorY = 0;
 
     document.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX; mouseY = e.clientY;
+
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+
       if (cursorDot) {
         cursorDot.style.left = mouseX + 'px';
         cursorDot.style.top = mouseY + 'px';
       }
+
     });
 
     // Smooth cursor follow
     function animateCursor() {
+
       cursorX += (mouseX - cursorX) * 0.12;
       cursorY += (mouseY - cursorY) * 0.12;
+
       if (cursor) {
         cursor.style.left = cursorX + 'px';
         cursor.style.top = cursorY + 'px';
       }
+
       requestAnimationFrame(animateCursor);
     }
+
     animateCursor();
 
     // Hover effects
-    const hoverTargets = document.querySelectorAll('a, button, .video-card, .design-card, .cert-card, .service-card');
+    const hoverTargets =
+      document.querySelectorAll(
+        'a, button, .video-card, .design-card, .cert-card, .service-card'
+      );
+
     hoverTargets.forEach(el => {
-      el.addEventListener('mouseenter', () => cursor?.classList.add('hover'));
-      el.addEventListener('mouseleave', () => cursor?.classList.remove('hover'));
+
+      el.addEventListener('mouseenter', () =>
+        cursor?.classList.add('hover')
+      );
+
+      el.addEventListener('mouseleave', () =>
+        cursor?.classList.remove('hover')
+      );
+
     });
 
-    document.addEventListener('mousedown', () => cursor?.classList.add('click'));
-    document.addEventListener('mouseup', () => cursor?.classList.remove('click'));
+    document.addEventListener('mousedown', () =>
+      cursor?.classList.add('click')
+    );
+
+    document.addEventListener('mouseup', () =>
+      cursor?.classList.remove('click')
+    );
   }
 
   // ─────────────────────────────────────────────────────
   //  13. HERO CANVAS — PARTICLE FIELD
   // ─────────────────────────────────────────────────────
   if (CONFIG.display.enableParticles) {
+
     const canvas = document.getElementById('heroCanvas');
+
     if (canvas) {
+
       const ctx = canvas.getContext('2d');
+
       let W, H, particles = [];
 
-      const PARTICLE_COUNT = Math.min(window.innerWidth < 768 ? 30 : 80, 80);
-      const accentRGB = hexToRgb(CONFIG.theme.accent) || { r: 201, g: 169, b: 110 };
+      const PARTICLE_COUNT =
+        Math.min(window.innerWidth < 768 ? 30 : 80, 80);
+
+      const accentRGB =
+        hexToRgb(CONFIG.theme.accent) ||
+        { r: 201, g: 169, b: 110 };
 
       function hexToRgb(hex) {
-        const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-        return result ? {
-          r: parseInt(result[1], 16),
-          g: parseInt(result[2], 16),
-          b: parseInt(result[3], 16)
-        } : null;
+
+        const result =
+          /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+
+        return result
+          ? {
+              r: parseInt(result[1], 16),
+              g: parseInt(result[2], 16),
+              b: parseInt(result[3], 16)
+            }
+          : null;
       }
 
       function resize() {
@@ -349,30 +445,50 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       function initParticles() {
-        particles = Array.from({ length: PARTICLE_COUNT }, () => ({
-          x: Math.random() * W,
-          y: Math.random() * H,
-          r: Math.random() * 1.5 + 0.3,
-          vx: (Math.random() - 0.5) * 0.4,
-          vy: (Math.random() - 0.5) * 0.4,
-          opacity: Math.random() * 0.5 + 0.1,
-        }));
+
+        particles = Array.from(
+          { length: PARTICLE_COUNT },
+          () => ({
+            x: Math.random() * W,
+            y: Math.random() * H,
+            r: Math.random() * 1.5 + 0.3,
+            vx: (Math.random() - 0.5) * 0.4,
+            vy: (Math.random() - 0.5) * 0.4,
+            opacity: Math.random() * 0.5 + 0.1,
+          })
+        );
       }
 
       function drawFrame() {
+
         ctx.clearRect(0, 0, W, H);
 
         // Connections
         for (let i = 0; i < particles.length; i++) {
+
           for (let j = i + 1; j < particles.length; j++) {
+
             const dx = particles[i].x - particles[j].x;
             const dy = particles[i].y - particles[j].y;
             const dist = Math.sqrt(dx * dx + dy * dy);
+
             if (dist < 140) {
+
               ctx.beginPath();
-              ctx.moveTo(particles[i].x, particles[i].y);
-              ctx.lineTo(particles[j].x, particles[j].y);
-              ctx.strokeStyle = `rgba(${accentRGB.r},${accentRGB.g},${accentRGB.b},${(1 - dist / 140) * 0.15})`;
+
+              ctx.moveTo(
+                particles[i].x,
+                particles[i].y
+              );
+
+              ctx.lineTo(
+                particles[j].x,
+                particles[j].y
+              );
+
+              ctx.strokeStyle =
+                `rgba(${accentRGB.r},${accentRGB.g},${accentRGB.b},${(1 - dist / 140) * 0.15})`;
+
               ctx.lineWidth = 0.5;
               ctx.stroke();
             }
@@ -381,93 +497,168 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Dots
         particles.forEach(p => {
+
           ctx.beginPath();
-          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(${accentRGB.r},${accentRGB.g},${accentRGB.b},${p.opacity})`;
+
+          ctx.arc(
+            p.x,
+            p.y,
+            p.r,
+            0,
+            Math.PI * 2
+          );
+
+          ctx.fillStyle =
+            `rgba(${accentRGB.r},${accentRGB.g},${accentRGB.b},${p.opacity})`;
+
           ctx.fill();
 
-          p.x += p.vx; p.y += p.vy;
+          p.x += p.vx;
+          p.y += p.vy;
+
           if (p.x < 0 || p.x > W) p.vx *= -1;
           if (p.y < 0 || p.y > H) p.vy *= -1;
+
         });
 
         requestAnimationFrame(drawFrame);
       }
 
-      const ro = new ResizeObserver(() => { resize(); initParticles(); });
+      const ro =
+        new ResizeObserver(() => {
+          resize();
+          initParticles();
+        });
+
       ro.observe(canvas.parentElement);
-      resize(); initParticles(); drawFrame();
+
+      resize();
+      initParticles();
+      drawFrame();
     }
   }
 
   // ─────────────────────────────────────────────────────
   //  14. CONTACT FORM HANDLER
   // ─────────────────────────────────────────────────────
- const form = document.getElementById('contactForm');
-if (form) {
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
+  const form = document.getElementById('contactForm');
 
-    const btn = form.querySelector('.btn-primary');
-    const originalHTML = btn.innerHTML;
+  if (form) {
 
-    btn.innerHTML = '<span>جاري الإرسال...</span>';
-    btn.disabled = true;
+    form.addEventListener('submit', async (e) => {
 
-    const formData = new FormData(form);
-    formData.append('access_key', 'd0432ab0-173f-4686-8cf4-4c43832c90d8');
-    formData.append('subject', 'رسالة جديدة من موقع HAG Portfolio');
-    formData.append('from_name', 'HAG Portfolio Contact');
+      e.preventDefault();
 
-    try {
-      const res = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: formData
-      });
-      const data = await res.json();
+      const btn = form.querySelector('.btn-primary');
+      const originalHTML = btn.innerHTML;
 
-      if (data.success) {
-        btn.innerHTML = '<span>تم الإرسال ✓</span>';
-        btn.style.background = '#22C55E';
-        btn.style.color = '#000';
-        form.reset();
-      } else {
-        throw new Error(data.message);
+      btn.innerHTML = '<span>جاري الإرسال...</span>';
+      btn.disabled = true;
+
+      const formData = new FormData(form);
+
+      formData.append(
+        'access_key',
+        'd0432ab0-173f-4686-8cf4-4c43832c90d8'
+      );
+
+      formData.append(
+        'subject',
+        'رسالة جديدة من موقع HAG Portfolio'
+      );
+
+      formData.append(
+        'from_name',
+        'HAG Portfolio Contact'
+      );
+
+      try {
+
+        const res = await fetch(
+          'https://api.web3forms.com/submit',
+          {
+            method: 'POST',
+            body: formData
+          }
+        );
+
+        const data = await res.json();
+
+        if (data.success) {
+
+          // ── Meta Pixel: Track successful Lead ──
+          if (typeof fbq === 'function') {
+            fbq('track', 'Lead');
+          }
+
+          btn.innerHTML = '<span>تم الإرسال ✓</span>';
+          btn.style.background = '#22C55E';
+          btn.style.color = '#000';
+
+          form.reset();
+
+        } else {
+
+          throw new Error(data.message);
+        }
+
+      } catch (err) {
+
+        btn.innerHTML =
+          '<span>فيه مشكلة، حاول تاني</span>';
+
+        btn.style.background = '#FF4444';
+        btn.style.color = '#fff';
       }
-    } catch (err) {
-      btn.innerHTML = '<span>فيه مشكلة، حاول تاني</span>';
-      btn.style.background = '#FF4444';
-      btn.style.color = '#fff';
-    }
 
-    setTimeout(() => {
-      btn.innerHTML = originalHTML;
-      btn.style.background = '';
-      btn.style.color = '';
-      btn.disabled = false;
-    }, 4000);
-  });
-}
+      setTimeout(() => {
+
+        btn.innerHTML = originalHTML;
+        btn.style.background = '';
+        btn.style.color = '';
+        btn.disabled = false;
+
+      }, 4000);
+
+    });
+  }
+
   // ─────────────────────────────────────────────────────
   //  15. ACTIVE NAV LINK ON SCROLL
   // ─────────────────────────────────────────────────────
   const sections = document.querySelectorAll('section[id]');
-  const navLinkEls = document.querySelectorAll('.nav-link:not(.cta-nav)');
+  const navLinkEls =
+    document.querySelectorAll('.nav-link:not(.cta-nav)');
 
-  const sectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        navLinkEls.forEach(link => {
-          link.classList.toggle(
-            'active-link',
-            link.getAttribute('href') === `#${entry.target.id}`
-          );
-        });
-      }
+  const sectionObserver =
+    new IntersectionObserver((entries) => {
+
+      entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+          navLinkEls.forEach(link => {
+
+            link.classList.toggle(
+              'active-link',
+              link.getAttribute('href') ===
+              `#${entry.target.id}`
+            );
+
+          });
+        }
+      });
+
+    }, {
+      threshold: 0.3
     });
-  }, { threshold: 0.3 });
 
   sections.forEach(s => sectionObserver.observe(s));
 
-  console.log('%c HAG PORTFOLIO ', 'background:#C9A96E;color:#000;padding:4px 8px;font-weight:bold;border-radius:2px;', '— Powered by config.js');
+  console.log(
+    '%c HAG PORTFOLIO ',
+    'background:#C9A96E;color:#000;padding:4px 8px;font-weight:bold;border-radius:2px;',
+    '— Powered by config.js'
+  );
+
 });
