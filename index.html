@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hossam Abdel-Gawad — Creative Portfolio</title>
-  <meta name="description" content="Multi-disciplinary creative specializing in Graphic Design, Cinematic Editing & AI-Powered Marketing." />
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="style.css" />
-  <!-- Config MUST load before app.js -->
-  <script src="config.js" defer></script>
-  <script src="app.js" defer></script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Hossam Creative — Visual Content Creator</title>
+<meta name="description" content="Social media design, Reels editing and Meta Ads. Turning ideas into tangible results." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Lalezar&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+<script src="config.js" defer></script>
+<script src="app.js" defer></script>
 
 <!-- Meta Pixel Code -->
 <script>
@@ -35,222 +31,104 @@ src="https://www.facebook.com/tr?id=1689090799053384&ev=PageView&noscript=1"
 <!-- End Meta Pixel Code -->
 </head>
 <body>
+<div id="bar"></div>
 
-  <!-- ══════════════════════════════════════════════ CURSOR -->
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-dot" id="cursorDot"></div>
+<nav><div class="wrap">
+  <a class="logo" href="#">Hossam<span>.</span>Creative</a>
+  <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#reels">Reels</a></li>
+    <li><a href="#story">Journey</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</div></nav>
 
-  <!-- ══════════════════════════════════════════════ NOISE OVERLAY -->
-  <div class="noise-overlay" aria-hidden="true"></div>
+<header class="hero"><div class="blob"></div><div class="wrap">
+  <span class="tag"><i></i>Open for first projects</span>
+  <h1>Turning ideas into <span class="script">tangible</span> results.</h1>
+  <p id="heroBio"></p>
+  <div class="row"><a class="btn primary" href="#work">See my work</a><a class="btn" href="#contact">Start a project</a></div>
+</div></header>
 
-  <!-- ══════════════════════════════════════════════ NAV -->
-  <nav class="nav" id="nav">
-    <div class="nav-inner">
-      <a href="#" class="nav-logo">
-        <span class="logo-text">H·A·G</span>
-        <span class="logo-dot"></span>
-      </a>
+<div class="mq"><div id="mq"></div></div>
 
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#work" class="nav-link" data-text="Work">Work</a></li>
-        <li><a href="#services" class="nav-link" data-text="Services">Services</a></li>
-        <li><a href="#certificates" class="nav-link" data-text="Credentials">Credentials</a></li>
-        <li><a href="#contact" class="nav-link cta-nav" data-text="Hire Me">Hire Me</a></li>
-      </ul>
+<section id="services"><div class="wrap">
+  <div class="eyebrow">What I do</div>
+  <h2>Three things, done properly.</h2>
+  <p class="lead">Each one connects: the design gets attention, the video holds it, the ads put it in front of the right people.</p>
+  <div class="grid" id="servicesGrid"></div>
+</div></section>
 
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
-
-  <!-- ══════════════════════════════════════════════ HERO -->
-  <section class="hero" id="hero">
-    <canvas class="hero-canvas" id="heroCanvas"></canvas>
-
-    <div class="hero-content">
-      <div class="hero-badge reveal-up" style="--delay:0s">
-        <span class="badge-dot"></span>
-        <span>Available for projects</span>
-      </div>
-
-      <h1 class="hero-name reveal-up" style="--delay:0.1s" id="heroName">
-        <!-- Injected by JS -->
-      </h1>
-
-      <p class="hero-title reveal-up" style="--delay:0.25s" id="heroTitle">
-        <!-- Injected by JS -->
-      </p>
-
-      <p class="hero-bio reveal-up" style="--delay:0.4s" id="heroBio">
-        <!-- Injected by JS -->
-      </p>
-
-      <div class="hero-actions reveal-up" style="--delay:0.55s">
-        <a href="#work" class="btn btn-primary">
-          <span>View Work</span>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <a href="#contact" class="btn btn-ghost">Get In Touch</a>
-      </div>
-
-      <div class="hero-stats reveal-up" style="--delay:0.7s">
-        <div class="stat"><span class="stat-num">50+</span><span class="stat-label">Projects</span></div>
-        <div class="stat-divider"></div>
-        <div class="stat"><span class="stat-num">3+</span><span class="stat-label">Years Exp.</span></div>
-        <div class="stat-divider"></div>
-        <div class="stat"><span class="stat-num">30+</span><span class="stat-label">Clients</span></div>
-      </div>
-    </div>
-
-    <div class="hero-scroll-hint">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
-    </div>
-
-    <div class="hero-tags">
-      <span>Graphic Design</span>
-      <span>Cinematic</span>
-      <span>AI Content</span>
-      <span>Marketing</span>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════════ MARQUEE -->
-  <div class="marquee-wrap" aria-hidden="true">
-    <div class="marquee-track">
-      <span>Luxury Design</span><span class="mx">✦</span>
-      <span>Cinematic Vision</span><span class="mx">✦</span>
-      <span>AI-Powered</span><span class="mx">✦</span>
-      <span>High-End Branding</span><span class="mx">✦</span>
-      <span>Motion Graphics</span><span class="mx">✦</span>
-      <span>Visual Storytelling</span><span class="mx">✦</span>
-      <span>Luxury Design</span><span class="mx">✦</span>
-      <span>Cinematic Vision</span><span class="mx">✦</span>
-      <span>AI-Powered</span><span class="mx">✦</span>
-      <span>High-End Branding</span><span class="mx">✦</span>
-      <span>Motion Graphics</span><span class="mx">✦</span>
-      <span>Visual Storytelling</span><span class="mx">✦</span>
-    </div>
+<section id="work"><div class="wrap">
+  <div class="eyebrow">Selected work</div>
+  <h2>Projects</h2>
+  <p class="lead">A few pieces from my full portfolio.</p>
+  <div class="work" id="designGrid"></div>
+  <div id="videoGroup" hidden>
+    <h3 class="sub">Videos</h3>
+    <div class="work vids" id="videoGrid"></div>
   </div>
+  <p class="note">Full case studies on <a id="behanceLink" href="#" target="_blank" rel="noopener">Behance</a>.</p>
+</div></section>
 
-  <!-- ══════════════════════════════════════════════ SERVICES -->
-  <section class="section services-section" id="services">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-eyebrow">What I Do</p>
-        <h2 class="section-title">Services</h2>
-      </div>
-      <div class="services-grid" id="servicesGrid">
-        <!-- Injected by JS -->
-      </div>
-    </div>
-  </section>
+<section id="reels"><div class="wrap">
+  <div class="eyebrow">Reels</div>
+  <h2>Watch it in motion.</h2>
+  <p class="lead">A few of my recent Shorts. Tap to play.</p>
+  <div class="reels" id="reelsGrid"></div>
+</div></section>
 
-  <!-- ══════════════════════════════════════════════ WORK -->
-  <section class="section work-section" id="work">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-eyebrow">Selected Work</p>
-        <h2 class="section-title">Portfolio</h2>
-      </div>
-
-      <!-- Filter Tabs -->
-      <div class="filter-tabs" id="filterTabs">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="video">Video</button>
-        <button class="filter-btn" data-filter="design">Design</button>
-      </div>
-
-      <!-- Video Grid -->
-      <div class="work-group" id="videoGroup">
-        <p class="work-group-label">Cinematic & Video</p>
-        <div class="video-grid" id="videoGrid">
-          <!-- Injected by JS -->
-        </div>
-      </div>
-
-      <!-- Design Grid -->
-      <div class="work-group" id="designGroup">
-        <p class="work-group-label">Graphic Design & AI</p>
-        <div class="design-grid" id="designGrid">
-          <!-- Injected by JS -->
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════════ CERTIFICATES -->
-  <section class="section certs-section" id="certificates">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-eyebrow">Verified Skills</p>
-        <h2 class="section-title">Credentials</h2>
-      </div>
-      <div class="certs-grid" id="certsGrid">
-        <!-- Injected by JS -->
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════════ CONTACT -->
-  <section class="section contact-section" id="contact">
-    <div class="container">
-      <div class="contact-inner">
-        <div class="contact-left">
-          <p class="section-eyebrow">Let's Work Together</p>
-          <h2 class="contact-heading">Start a<br/><em>Project</em></h2>
-          <p class="contact-sub" id="contactSub"><!-- Injected --></p>
-          <div class="contact-socials" id="contactSocials"><!-- Injected --></div>
-        </div>
-        <div class="contact-right">
-          <form class="contact-form" id="contactForm">
-            <div class="form-group">
-              <input type="text" name="name" placeholder="Your Name" required autocomplete="off" />
-              <label>Name</label>
-            </div>
-            <div class="form-group">
-              <input type="email" name="email" placeholder="Your Email" required autocomplete="off" />
-              <label>Email</label>
-            </div>
-            <div class="form-group">
-              <select name="service">
-                <option value="">Select Service</option>
-                <option>Graphic Design</option>
-                <option>Cinematic Editing</option>
-                <option>AI Content Creation</option>
-                <option>Marketing Strategy</option>
-                <option>Full Package</option>
-              </select>
-              <label>Service</label>
-            </div>
-            <div class="form-group">
-              <textarea name="message" placeholder="Tell me about your project..." rows="4" required></textarea>
-              <label>Message</label>
-            </div>
-            <button type="submit" class="btn btn-primary btn-full">
-              <span>Send Message</span>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════════════ FOOTER -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <p class="footer-name" id="footerName"><!-- Injected --></p>
-      <p class="footer-copy">© <span id="year"></span> — All rights reserved.</p>
-    </div>
-  </footer>
-
-  <!-- ══════════════════════════════════════════════ VIDEO MODAL -->
-  <div class="modal-overlay" id="videoModal">
-    <button class="modal-close" id="modalClose">✕</button>
-    <div class="modal-content" id="modalContent"></div>
+<section><div class="wrap">
+  <div class="eyebrow">Why “Pixel”</div>
+  <h2>Every field has its own <span class="script">pixel</span>.</h2>
+  <p class="lead">It’s the smallest unit that decides everything, and I pay attention to it in each skill I work with.</p>
+  <div class="pix">
+    <div><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg><b>Design</b><span>The image pixel: detail and clarity</span></div>
+    <div><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg><b>Ads</b><span>The Meta Pixel: tracking what really works</span></div>
+    <div><svg viewBox="0 0 24 24"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6"/></svg><b>Web</b><span>The px in CSS: structure and spacing</span></div>
   </div>
+</div></section>
 
+<section id="story"><div class="wrap">
+  <div class="eyebrow">Building in public</div>
+  <h2>Learning out loud.</h2>
+  <p class="lead">I document what I learn and what I get wrong, because real progress is more useful than polished claims.</p>
+  <ol class="steps">
+    <li><b>Design</b><span>Photoshop, Canva and AI tools for social content</span></li>
+    <li><b>Video</b><span>Premiere Pro and CapCut for Reels and Shorts</span></li>
+    <li><b>Ads</b><span>Hands-on Meta Business Manager, Pixel, catalogs, CBO and ABO</span></li>
+  </ol>
+</div></section>
+
+<section id="certificates"><div class="wrap">
+  <div class="eyebrow">Learning</div>
+  <h2>Certificates</h2>
+  <div class="certs" id="certsGrid"></div>
+</div></section>
+
+<section id="contact"><div class="wrap contact">
+  <div class="eyebrow">Contact</div>
+  <h2>Have an idea? <span class="script">Let’s talk.</span></h2>
+  <p class="lead" id="contactSub"></p>
+  <form id="contactForm">
+    <input name="name" placeholder="Your name" required autocomplete="off" />
+    <select name="service">
+      <option value="">Service</option>
+      <option>Social Media Design</option>
+      <option>Reels &amp; Shorts Editing</option>
+      <option>Meta Ads</option>
+      <option>Full package</option>
+    </select>
+    <textarea name="message" rows="4" placeholder="Tell me about your project and timeline" required></textarea>
+    <button class="btn primary" type="submit">Send by email</button>
+  </form>
+  <div class="row" id="contactSocials"></div>
+</div></section>
+
+<footer><div class="wrap">© <span id="year"></span> <span id="footerName"></span> · Hossam Creative</div></footer>
+
+<div id="lb"><img alt="" /></div>
+<div class="modal" id="videoModal"><button id="modalClose" aria-label="Close">✕</button><div id="modalContent"></div></div>
 </body>
 </html>
