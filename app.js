@@ -5,6 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
   const track = (ev) => { try { if (window.fbq) fbq('track', ev); } catch (e) {} };
   const { identity, social, display } = CONFIG;
+  // يجرّب الصورة في assets/ ولو مش موجودة يجرّبها بره، والعكس
+  window.imgFallback = img => {
+    if (img.dataset.tried) return; img.dataset.tried = 1;
+    const s = img.getAttribute('src') || '';
+    if (/^(https?:|data:)/.test(s)) return;
+    img.src = s.indexOf('assets/') === 0 ? s.slice(7) : 'assets/' + s;
+  };
   const SV = (p, extra = '') => `<svg viewBox="0 0 24 24" ${extra}>${p}</svg>`;
   const ICON = {
     design: '<path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><circle cx="11" cy="11" r="2"/>',
@@ -45,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const lb = $('lb');
   if (display.showDesignSection) {
     $('designGrid').innerHTML = CONFIG.designs.map(d => `
-      <figure class="${d.featured ? 'wide' : ''}"><img loading="lazy" src="${esc(d.src)}" alt="${esc(d.title)}">
+      <figure class="${d.featured ? 'wide' : ''}"><img loading="lazy" src="${esc(d.src)}" alt="${esc(d.title)}" onerror="imgFallback(this)">
       <figcaption><b>${esc(d.title)}</b><span>${esc(d.category)}</span></figcaption></figure>`).join('');
     $('designGrid').querySelectorAll('img').forEach(i => i.addEventListener('click', () => { lb.querySelector('img').src = i.src; lb.classList.add('on'); }));
     lb.addEventListener('click', () => lb.classList.remove('on'));
