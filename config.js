@@ -51,12 +51,12 @@ const CONFIG = {
   ],
 
   designs: [
-    { src: "assets/d1.jpg", title: "White Black Friday",                    category: "Social media design", tags: [], featured: false },
-    { src: "assets/d2.jpg", title: "Gaza — From Ashes, We Rise",            category: "Photo manipulation",  tags: [], featured: false },
-    { src: "assets/d3.jpg", title: "Saudi National Day 95",                 category: "Social media design", tags: [], featured: false },
-    { src: "assets/d4.jpg", title: "Ramadan campaign banner",               category: "Ad creative",         tags: [], featured: true  },
-    { src: "assets/d5.jpg", title: "Saudi National Day 95 · B&W concept",   category: "Concept study",       tags: [], featured: false },
-    { src: "assets/d6.jpg", title: "Saudi National Day 95 · Colour concept",category: "Concept study",       tags: [], featured: false },
+    { src: "d1.jpg", title: "White Black Friday",                    category: "Social media design", tags: [], featured: false },
+    { src: "d2.jpg", title: "Gaza — From Ashes, We Rise",            category: "Photo manipulation",  tags: [], featured: false },
+    { src: "d3.jpg", title: "Saudi National Day 95",                 category: "Social media design", tags: [], featured: false },
+    { src: "d4.jpg", title: "Ramadan campaign banner",               category: "Ad creative",         tags: [], featured: true  },
+    { src: "d5.jpg", title: "Saudi National Day 95 · B&W concept",   category: "Concept study",       tags: [], featured: false },
+    { src: "d6.jpg", title: "Saudi National Day 95 · Colour concept",category: "Concept study",       tags: [], featured: false },
     { src: "https://res.cloudinary.com/dlv72mxl5/image/upload/v1776959339/474092009_122208513122210045_7246867498698929885_n_hs5fnl.jpg", title: "Dental clinic design", category: "Social media design", tags: [], featured: false },
     { src: "https://res.cloudinary.com/dlv72mxl5/image/upload/v1776959340/hossam-abdel_gawx-_lzgabt.jpg", title: "Poster", category: "Photo manipulation", tags: [], featured: false }
   ],
